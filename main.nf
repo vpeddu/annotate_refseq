@@ -57,7 +57,7 @@ process Combine {
 
 
   input:
-  file  "*.fna.gz" from combine_ch.collect()
+  file  "*.annotated.fasta" from combine_ch.collect()
   
   output:
   file "*.fa" 
@@ -79,7 +79,7 @@ script:
 
  echo "unzipping and combining"
 
- cat *.fna.gz | gunzip > refseq_genome_annotated_combined.fna
+ cat *.fasta > refseq_genome_annotated_combined.fna
 
  echo "running faSplit"
 
