@@ -63,7 +63,7 @@ process Combine {
   file "*.fa" 
 
 
-  container 'quay.io/biocontainers/ucsc-fasplit:377--h199ee4e_0'
+  container 'quay.io/biocontainers/bbmap:38.86--h1296035_0'
 
 
   //errorStrategy 'ignore'
@@ -81,9 +81,9 @@ script:
 
  cat *.fasta > refseq_genome_annotated_combined.fna
 
- echo "running faSplit"
+ echo "splitting with partition.sh"
 
- faSplit sequence refseq_genome_annotated_combined.fna 6 rf
+partition.sh in=refseq_genome_annotated_combined.fna out=part%.fa -Xmx200g ways=5 
 
   """
 }
