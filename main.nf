@@ -83,7 +83,7 @@ script:
 
  echo "running faSplit"
 
- faSplit sequence refseq_genome_annotated_combined  6 rf
+ faSplit sequence refseq_genome_annotated_combined.fna 6 rf
 
   """
 }
